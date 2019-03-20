@@ -23,24 +23,16 @@ requirements:
 test:
   imports:
     - monocle
-    - monocle.asyncore_stack
-    - monocle.asyncore_stack.network
-    - monocle.stack
-    - monocle.stack.network
-    - monocle.tornado_stack
-    - monocle.tornado_stack.network
-    - monocle.twisted_stack
-    - monocle.twisted_stack.network
 
 about:
   home: http://github.com/saucelabs/monocle
   license: MIT
   license_family: MIT
-  license_file: 
+  license_file:
   summary: An async programming framework with a blocking look-alike syntax
-  doc_url: 
-  dev_url: 
+  doc_url:
+  dev_url:
 
 extra:
   recipe-maintainers:
-    - your-github-id-here
+    - jemrobinson
