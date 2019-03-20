@@ -1,0 +1,46 @@
+{% set name = "monocle" %}
+{% set version = "0.42" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 4d57fa06a2082206c8851a44c5df12cd71595097c6b17b85275b9d2bef34f361
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+test:
+  imports:
+    - monocle
+    - monocle.asyncore_stack
+    - monocle.asyncore_stack.network
+    - monocle.stack
+    - monocle.stack.network
+    - monocle.tornado_stack
+    - monocle.tornado_stack.network
+    - monocle.twisted_stack
+    - monocle.twisted_stack.network
+
+about:
+  home: http://github.com/saucelabs/monocle
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: An async programming framework with a blocking look-alike syntax
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
